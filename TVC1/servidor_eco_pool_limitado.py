@@ -60,6 +60,9 @@ def main():
                         pass
                     socket_cliente.close()
                     continue
+                else:
+                   socket_cliente.sendall(b"Conectado.\n")
+
 
             fila_clientes.put((socket_cliente, endereco))
     except KeyboardInterrupt:
