@@ -23,6 +23,8 @@ def main():
     try:
         while True:
             socket_cliente, endereco = servidor.accept()
+            socket_cliente.sendall(b"Conexao estabelecida.\n")
+
             thread = threading.Thread(target=atender_cliente, args=(socket_cliente, endereco))
             thread.start()
     except KeyboardInterrupt:
