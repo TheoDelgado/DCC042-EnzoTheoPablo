@@ -8,7 +8,7 @@ def main():
         cliente.connect((host, porta))
         dados = cliente.recv(1024)
         print("Conectado ao servidor.")
-        print("Recebido:", dados.decode())
+        print(dados.decode())
         try:
             while True:
                 mensagem = input("Digite algo: ")
